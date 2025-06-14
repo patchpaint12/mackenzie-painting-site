@@ -21,15 +21,6 @@
     <label for="rooms">Rooms to be painted:</label>
     <input type="text" id="rooms" name="rooms" /><br/>
 
-    <!-- Insert chatbot iframe here -->
-
-<iframe
-    src="https://www.chatbase.co/chatbot-iframe/Viwp7tWABAMjUq4ATybwr"
-    width="100%"
-    style="height: 100%; min-height: 700px"
-    frameborder="0"
-></iframe>
-
     <label for="additionalInfo">Additional Information:</label><br/>
     <textarea id="additionalInfo" name="additionalInfo" rows="6" cols="50"></textarea><br/>
 
@@ -38,5 +29,40 @@
 
     <input type="submit" value="Submit Request" />
   </form>
+
+  
+<script>
+(function(){
+  if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+    window.chatbase = (...arguments) => {
+      if (!window.chatbase.q) {
+        window.chatbase.q = [];
+      }
+      window.chatbase.q.push(arguments);
+    };
+    window.chatbase = new Proxy(window.chatbase, {
+      get(target, prop) {
+        if (prop === "q") {
+          return target.q;
+        }
+        return (...args) => target(prop, ...args);
+      }
+    });
+  }
+  const onLoad = function () {
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.id = "Viwp7tWABAMjUq4ATybwr";
+    script.domain = "www.chatbase.co";
+    document.body.appendChild(script);
+  };
+  if (document.readyState === "complete") {
+    onLoad();
+  } else {
+    window.addEventListener("load", onLoad);
+  }
+})();
+</script>
+
 </body>
 </html>
