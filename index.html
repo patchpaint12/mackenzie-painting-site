@@ -2,42 +2,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mackenzie Doherty Painting</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .bg-newburyport-blue { background-color: #264e70; }
+    .text-newburyport-blue { color: #264e70; }
+    .bg-pale-oak { background-color: #e8e1d4; }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
-  <header class="bg-newburyport-blue text-white p-6 text-center">
-    <h1 class="text-4xl font-bold">Mackenzie Doherty Painting</h1>
-    <p class="text-lg mt-2">Serving Southern NH and the North Shore of MA</p>
-    <a href="quote.html" class="inline-block mt-4 bg-white text-newburyport-blue font-semibold px-6 py-2 rounded shadow hover:bg-pale-oak">Request a Quote</a>
+<body class="font-sans text-gray-800 bg-white">
+
+  <header class="bg-newburyport-blue text-white p-6 sticky top-0 shadow z-10">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Mackenzie Doherty Painting</h1>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="services.html" class="hover:underline">Services</a>
+        <a href="quote.html" class="hover:underline">Quote</a>
+        <a href="gallery.html" class="hover:underline">Gallery</a>
+        <a href="about.html" class="hover:underline">About</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="max-w-4xl mx-auto p-6 space-y-10">
-    <section>
-      <h2 class="text-2xl font-bold mb-2">Testimonial</h2>
-      <blockquote class="bg-gray-100 p-4 rounded shadow italic">
+  <main class="max-w-6xl mx-auto p-6 space-y-16">
+    <!-- Hero -->
+    <section class="relative rounded-lg overflow-hidden shadow-md">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Modern interior" class="w-full h-96 object-cover">
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+        <div class="text-center text-white">
+          <h2 class="text-4xl font-bold mb-2">Refined Interior Painting</h2>
+          <p class="text-lg mb-4">Transforming homes across the North Shore & Seacoast</p>
+          <a href="quote.html" class="bg-white text-newburyport-blue font-semibold px-6 py-2 rounded shadow hover:bg-pale-oak">Request a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="text-center">
+      <h3 class="text-3xl font-semibold mb-6">Services</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-4 border rounded shadow">
+          <h4 class="text-xl font-semibold mb-2">Interior Painting</h4>
+          <p>Walls, ceilings, trim — high-quality finishes tailored to your space.</p>
+        </div>
+        <div class="p-4 border rounded shadow">
+          <h4 class="text-xl font-semibold mb-2">Cabinet Refinishing</h4>
+          <p>Modernize your kitchen or built-ins with precision cabinet work.</p>
+        </div>
+        <div class="p-4 border rounded shadow">
+          <h4 class="text-xl font-semibold mb-2">Commercial Work</h4>
+          <p>Small-scale commercial painting for offices, retail, and boutique properties.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-gray-50 p-6 rounded shadow">
+      <h3 class="text-2xl font-semibold text-center mb-4">Client Feedback</h3>
+      <blockquote class="italic max-w-2xl mx-auto text-lg text-gray-700">
         “Mackenzie and her team came in to reduce my full home renovation from a previous job that didn't go as planned...
         She completely resolved all the prior issues and painted my home beautifully, often working well past midnight to make sure the job got done — but never compromising on the quality. Highly recommend.”
       </blockquote>
     </section>
-
-    <section>
-      <h2 class="text-2xl font-bold mb-2">Gallery</h2>
-      <p class="text-gray-600">Gallery coming soon...</p>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-bold mb-2">Contact</h2>
-      <p>Email: <a href="mailto:mackenzie.doherty12@gmail.com" class="text-blue-600 underline">mackenzie.doherty12@gmail.com</a></p>
-      <p>Phone: <a href="tel:9786416178" class="text-blue-600 underline">978-641-6178</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/mackenzie-doherty-370079177/" class="text-blue-600 underline">View Profile</a></p>
-    </section>
   </main>
 
-  <footer class="bg-gray-200 text-center py-4 text-sm text-gray-600 mt-10">
-    &copy; 2025 Mackenzie Doherty Painting. All rights reserved.
+  <footer class="bg-gray-100 text-center py-6 mt-12 text-sm text-gray-600">
+    &copy; 2025 Mackenzie Doherty Painting • <a href="mailto:mackenzie.doherty12@gmail.com" class="underline">Email</a> • <a href="tel:9786416178" class="underline">Call</a>
   </footer>
 </body>
 </html>
