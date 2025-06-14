@@ -2,34 +2,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mackenzie Doherty Painting</title>
-  <style>
-    body { font-family: sans-serif; background: #f8f8f8; color: #333; padding: 2rem; }
-    header { text-align: center; margin-bottom: 2rem; }
-    h1 { color: #2c3e50; }
-    .testimonial, .contact { margin-top: 2rem; padding: 1rem; background: white; border-radius: 8px; }
-    a { color: #2c3e50; text-decoration: underline; }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>Mackenzie Doherty Painting</h1>
-    <p>Professional interior painting services for southern NH and the North Shore of MA.</p>
-    <button onclick="location.href='quote.html'">Request a Quote</button>
+<body class="bg-white text-gray-800">
+  <header class="bg-newburyport-blue text-white p-6 text-center">
+    <h1 class="text-4xl font-bold">Mackenzie Doherty Painting</h1>
+    <p class="text-lg mt-2">Serving Southern NH and the North Shore of MA</p>
+    <a href="quote.html" class="inline-block mt-4 bg-white text-newburyport-blue font-semibold px-6 py-2 rounded shadow hover:bg-pale-oak">Request a Quote</a>
   </header>
 
-  <section class="testimonial">
-    <h2>Testimonial</h2>
-    <p><em>Mackenzie and her team came in to reduce my full home renovation from a previous job that didn't go as planned. I had asked her to accommodate an incredibly tight turnaround time because my rental was running out, and I needed to move in within a week. She completely resolved all the prior issues and painted my home beautifully, often working well past midnight to make sure the job got done — but never compromising on the quality. I could not have been happier. She is an incredible young woman and you will not be disappointed! Highly recommend.</em></p>
-  </section>
+  <main class="max-w-4xl mx-auto p-6 space-y-10">
+    <section>
+      <h2 class="text-2xl font-bold mb-2">Testimonial</h2>
+      <blockquote class="bg-gray-100 p-4 rounded shadow italic">
+        “Mackenzie and her team came in to reduce my full home renovation from a previous job that didn't go as planned...
+        She completely resolved all the prior issues and painted my home beautifully, often working well past midnight to make sure the job got done — but never compromising on the quality. Highly recommend.”
+      </blockquote>
+    </section>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:mackenzie.doherty12@gmail.com">mackenzie.doherty12@gmail.com</a></p>
-    <p>Phone: <a href="tel:9786416178">978-641-6178</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/mackenzie-doherty-370079177/" target="_blank">View Profile</a></p>
-  </section>
+    <section>
+      <h2 class="text-2xl font-bold mb-2">Gallery</h2>
+      <p class="text-gray-600">Gallery coming soon...</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-2">Contact</h2>
+      <p>Email: <a href="mailto:mackenzie.doherty12@gmail.com" class="text-blue-600 underline">mackenzie.doherty12@gmail.com</a></p>
+      <p>Phone: <a href="tel:9786416178" class="text-blue-600 underline">978-641-6178</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/mackenzie-doherty-370079177/" class="text-blue-600 underline">View Profile</a></p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-200 text-center py-4 text-sm text-gray-600 mt-10">
+    &copy; 2025 Mackenzie Doherty Painting. All rights reserved.
+  </footer>
 </body>
 </html>
