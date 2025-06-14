@@ -62,11 +62,50 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="bg-gray-50 p-6 rounded shadow">
-      <h3 class="text-2xl font-semibold text-center mb-4">Client Feedback</h3>
-      <blockquote class="italic max-w-2xl mx-auto text-lg text-gray-700">
-        “Mackenzie and her team stepped in to rescue my full home renovation after a previous job had gone off track. I asked her to accommodate an incredibly tight turnaround because my rental was ending, and I needed to move in within a week. She resolved all the prior issues and painted my home beautifully — often working well past midnight to ensure the job was done on time, without ever compromising on quality. I couldn’t have been happier. Mackenzie is an exceptional professional, and I reco...
-    </section>
+    
+<section class="bg-gray-50 p-6 rounded shadow relative overflow-hidden">
+  <h3 class="text-2xl font-semibold text-center mb-6">Client Feedback</h3>
+  <div id="testimonial-container" class="transition-all duration-500 ease-in-out">
+    <div class="testimonial-slide text-lg text-gray-700 text-center max-w-2xl mx-auto italic">
+      “Mackenzie and her team stepped in to rescue my full home renovation after a previous job had gone off track. I asked her to accommodate an incredibly tight turnaround because my rental was ending, and I needed to move in within a week. She resolved all the prior issues and painted my home beautifully — often working well past midnight to ensure the job was done on time, without ever compromising on quality. I couldn’t have been happier. Mackenzie is an exceptional professional, and I recomm...
+    </div>
+    <!-- Add more slides below if desired -->
+    <!--
+    <div class="testimonial-slide hidden text-lg text-gray-700 text-center max-w-2xl mx-auto italic">
+      “Second testimonial placeholder text goes here.”
+    </div>
+    -->
+  </div>
+  <div class="flex justify-center gap-4 mt-4">
+    <button onclick="prevTestimonial()" class="bg-white border rounded px-4 py-2 shadow hover:bg-gray-200">‹</button>
+    <button onclick="nextTestimonial()" class="bg-white border rounded px-4 py-2 shadow hover:bg-gray-200">›</button>
+  </div>
+  <script>
+    const slides = document.querySelectorAll('.testimonial-slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('hidden', i !== index);
+      });
+    }
+
+    function nextTestimonial() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevTestimonial() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    setInterval(nextTestimonial, 7000); // auto-rotate every 7 seconds
+
+    showSlide(current);
+  </script>
+</section>
+
   </main>
 
   <footer class="bg-gray-100 text-center py-6 mt-12 text-sm text-gray-600">
