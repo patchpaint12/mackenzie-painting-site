@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
 
   <main class="max-w-4xl mx-auto p-6 space-y-8">
     <h2 class="text-3xl font-bold text-center">Request a Quote</h2>
-    <form name="quote-request" method="POST" data-netlify="true" enctype="multipart/form-data" class="bg-gray-50 p-6 rounded shadow">
+    <form name="quote-request" method="POST" data-netlify="true" action="/thank-you.html" enctype="multipart/form-data" class="bg-gray-50 p-6 rounded shadow">
       <input type="hidden" name="form-name" value="quote-request" />
 
       <label for="name" class="block mt-4 font-semibold">Name*</label>
@@ -53,33 +54,19 @@
   </footer>
 
   <script>
-  (function(){
-    if(!window.chatbase||window.chatbase("getState")!=="initialized"){
-      window.chatbase=(...arguments)=>{
-        if(!window.chatbase.q){window.chatbase.q=[]}
-        window.chatbase.q.push(arguments)
-      };
-      window.chatbase=new Proxy(window.chatbase,{
-        get(target,prop){
-          if(prop==="q"){return target.q}
-          return(...args)=>target(prop,...args)
-        }
-      });
-    }
-    const onLoad=function(){
-      const script=document.createElement("script");
-      script.src="https://www.chatbase.co/embed.min.js";
-      script.id="Viwp7tWABAMjUq4ATybwr";
-      script.domain="www.chatbase.co";
-      document.body.appendChild(script)
-    };
-    if(document.readyState==="complete"){
-      onLoad()
-    }else{
-      window.addEventListener("load",onLoad)
-    }
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+    window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};
+    window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}});
+  }
+  const onLoad=function(){
+    const script=document.createElement("script");
+    script.src="https://www.chatbase.co/embed.min.js";
+    script.id="Viwp7tWABAMjUq4ATybwr";
+    script.domain="www.chatbase.co";
+    document.body.appendChild(script)
+  };
+  if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}
   })();
   </script>
-
 </body>
 </html>
