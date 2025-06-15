@@ -222,3 +222,20 @@ form button:hover {
   font-style: italic;
   margin-top: 0.5rem;
 }
+
+/* Background image for all pages except about and thank-you */
+.page-with-background {
+  background: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* === Custom background and transparency for selected pages only === */
+.page-overlay {
+  background: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.content-overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+}
