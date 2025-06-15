@@ -3,8 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Mackenzie Doherty</title>
+  <title>Project Gallery | Mackenzie Doherty</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .gallery-grid figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-grid img {
+      width: 100%;
+      max-height: 300px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .gallery-grid figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      text-align: center;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+    .lightbox img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .lightbox-controls {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .lightbox-controls a {
+      color: white;
+      font-size: 2rem;
+      text-decoration: none;
+      padding: 0 1rem;
+    }
+    .about-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+    .about-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .about-text {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 800px;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,11 +111,14 @@
   </header>
 
   <main>
-    <section class="about">
-      <h1>About Mackenzie</h1>
-      <p>Mackenzie Doherty is a professional painter with over 10 years of hands-on experience. Based in southern New Hampshire, she specializes in both residential and commercial painting throughout the Seacoast and the North Shore of Massachusetts.</p>
-      <p>What sets Mackenzie apart is her commitment to detail, her deep respect for historic New England homes, and her belief that great painting work should feel effortless, timeless, and lasting.</p>
-      <p>Whether it’s restoring trim on a 19th-century colonial or refreshing a coastal storefront, Mackenzie brings a personal, thoughtful touch to every project.</p>
+    <section class="about-section">
+      <img class="about-image" src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750016505/about-image_ls9api.png" alt="Mackenzie painting" />
+      <div class="about-text">
+        <h1>Hi, I’m Mackenzie.</h1>
+        <p>I’ve been painting homes and businesses for over 10 years across southern New Hampshire and the North Shore of Massachusetts. What began as a summer job quickly turned into a craft I love — and a business built on trust, detail, and pride in every finish.</p>
+        <p>Whether it’s a crisp new coat in a coastal kitchen or refreshing an old inn, I bring the same care to every brushstroke. I believe painting is not just about color — it’s about creating calm, clean spaces where people feel at home.</p>
+        <p>Thanks for visiting — I’d love to hear about your project!</p>
+      </div>
     </section>
   </main>
 
