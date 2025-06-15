@@ -72,37 +72,38 @@ h2 {
 }
 
 .carousel {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  scroll-behavior: smooth;
   margin: 2rem 0;
   background-color: var(--white-dove);
   border-radius: 4px;
 }
 
-.carousel-track {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  transition: transform 0.3s ease-in-out;
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
-.carousel-track img {
-  height: 200px;
-  width: auto;
+.carousel-item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 250px;
+  height: auto;
   border-radius: 6px;
-  flex-shrink: 0;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .carousel-nav {
-  position: absolute;
-  top: 50%;
-  width: 100%;
+  position: relative;
+  margin-top: -2rem;
   display: flex;
   justify-content: space-between;
-  transform: translateY(-50%);
-  pointer-events: none;
+  width: 100%;
+  z-index: 1;
 }
 
 .carousel-nav button {
@@ -110,7 +111,6 @@ h2 {
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  pointer-events: all;
   padding: 0.2rem 0.6rem;
   border-radius: 0.5rem;
 }
