@@ -283,3 +283,14 @@ form button:hover {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 2rem;
 }
+.page-overlay header {
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.page-overlay .hero {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 6px;
+  z-index: 1;
+}
+
