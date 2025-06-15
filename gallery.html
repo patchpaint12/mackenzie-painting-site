@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Gallery | Mackenzie Doherty</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .gallery-grid figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .gallery-grid figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -26,17 +51,35 @@
 
       <h2>Commercial Projects</h2>
       <div class="gallery-grid">
-        <img src="gallery/commercial/essex-st.-inn.jpeg" alt="Essex Street Inn exterior painting" />
+        <figure>
+          <img src="gallery/commercial/essex-st.-inn.jpeg" alt="Essex Street Inn exterior painting" />
+          <figcaption>Essex Street Inn (Commercial Exterior)</figcaption>
+        </figure>
         <!-- Add more commercial projects here -->
       </div>
 
       <h2>Residential Projects</h2>
       <div class="gallery-grid">
-        <img src="images/sample1.jpg" alt="Living room with crown molding" />
-        <img src="images/sample2.jpg" alt="Freshly painted exterior of historic home" />
-        <img src="images/sample3.jpg" alt="Trim detail and accent wall" />
-        <img src="images/sample4.jpg" alt="Neutral-toned kitchen cabinetry" />
-        <img src="images/sample5.jpg" alt="Classic stairwell with crisp paint lines" />
+        <figure>
+          <img src="images/sample1.jpg" alt="Living room with crown molding" />
+          <figcaption>Living room with crown molding</figcaption>
+        </figure>
+        <figure>
+          <img src="images/sample2.jpg" alt="Freshly painted exterior of historic home" />
+          <figcaption>Freshly painted historic exterior</figcaption>
+        </figure>
+        <figure>
+          <img src="images/sample3.jpg" alt="Trim detail and accent wall" />
+          <figcaption>Trim detail and accent wall</figcaption>
+        </figure>
+        <figure>
+          <img src="images/sample4.jpg" alt="Neutral-toned kitchen cabinetry" />
+          <figcaption>Neutral-toned kitchen cabinetry</figcaption>
+        </figure>
+        <figure>
+          <img src="images/sample5.jpg" alt="Classic stairwell with crisp paint lines" />
+          <figcaption>Classic stairwell with crisp lines</figcaption>
+        </figure>
       </div>
     </section>
   </main>
