@@ -36,18 +36,22 @@ body.page-overlay {
   pointer-events: none;
 }
 
-.page-overlay .carousel {
+.page-overlay main,
+.page-overlay .carousel,
+.page-overlay .content-overlay,
+.page-overlay .lightbox {
   background-color: rgba(255, 255, 255, 0.85);
   position: relative;
   z-index: 1;
 }
 
-.page-overlay main {
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 6px;
-  padding: 2rem 1.5rem;
+.page-overlay header,
+.page-overlay nav,
+.page-overlay footer,
+.page-overlay .hero {
+  background-color: transparent;
+  z-index: 2;
   position: relative;
-  z-index: 1;
 }
 
 header, footer {
@@ -254,39 +258,7 @@ form button:hover {
   margin-top: 0.5rem;
 }
 
-/* Background image for all pages except about and thank-you */
 .page-with-background {
   background: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png') no-repeat center center fixed;
   background-size: cover;
-}
-
-/* === Custom background and transparency for selected pages only === */
-.page-overlay {
-  background: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-  z-index: 1;
-}
-
-.page-overlay::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.85);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.page-overlay .carousel {
-  background-color: rgba(255, 255, 255, 0.85);
-  position: relative;
-  z-index: 1;
-}
-
-.content-overlay {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 2rem;
 }
