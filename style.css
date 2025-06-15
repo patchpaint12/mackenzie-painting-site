@@ -1,0 +1,26 @@
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  background-color: #f6f6f3;
+  color: #4d4d4a;
+  margin: 0;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover, .active-link {
+  text-decoration: underline;
+}
+.bg-newburyport-blue { background-color: #264e70; }
+.bg-cloud-white { background-color: #f6f6f3; }
+.text-oyster-shell { color: #4d4d4a; }
+.text-pale-oak { color: #a89f91; }
+.bg-pale-oak { background-color: #e5dfd5; }
+.text-sand-dollar { color: #b0a18b; }

@@ -1,59 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mackenzie Doherty Painting</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      --newburyport-blue: #264e70;
-      --cloud-white: #f8f8f7;
-      --sand-dollar: #ded7c4;
-    }
-    .bg-newburyport-blue { background-color: var(--newburyport-blue); }
-    .text-newburyport-blue { color: var(--newburyport-blue); }
-    .bg-cloud-white { background-color: var(--cloud-white); }
-    .bg-sand-dollar { background-color: var(--sand-dollar); }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-cloud-white text-gray-900 font-sans">
-
-  <header class="bg-newburyport-blue text-white p-6 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
+<body class="bg-cloud-white text-oyster-shell">
+  <header class="bg-newburyport-blue text-white shadow-md sticky top-0">
+    <div class="container mx-auto flex justify-between items-center p-6">
       <h1 class="text-2xl font-bold">Mackenzie Doherty Painting</h1>
       <nav class="space-x-6">
-        <a href="index.html" class="underline font-semibold">Home</a>
-        <a href="services.html" class="hover:underline">Services</a>
-        <a href="quote.html" class="hover:underline">Quote</a>
-        <a href="gallery.html" class="hover:underline">Gallery</a>
-        <a href="about.html" class="hover:underline">About</a>
-        <a href="review.html" class="hover:underline">Reviews</a>
+        <a href="index.html" class="active-link">Home</a>
+        <a href="services.html">Services</a>
+        <a href="quote.html">Quote</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="review.html">Reviews</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto p-8 space-y-12">
-    <section class="text-center space-y-4">
-      <h2 class="text-4xl font-extrabold text-newburyport-blue">Elevate Your Space With Timeless Color</h2>
-      <p class="text-lg max-w-2xl mx-auto">Professional interior and exterior painting services across the Seacoast and North Shore. Let Mackenzie bring precision, pride, and personality to your next project.</p>
+  <main class="container mx-auto p-8">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-light mb-4">Elevate Your Space with Timeless Color</h2>
+      <p class="text-lg text-pale-oak">Serving the Seacoast and North Shore with craftsmanship and care</p>
     </section>
-
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-sand-dollar p-6 rounded shadow">
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="images/hero-room.jpg" alt="Painted Room" class="rounded shadow" />
       <div>
-        <h3 class="text-2xl font-semibold mb-2 text-newburyport-blue">Why Choose Us</h3>
-        <p>Mackenzie Doherty is a second-generation painter with over a decade of hands-on experience. After seven years working in her family’s painting business, she launched her own company, quickly becoming a trusted name in the region. Her portfolio includes L Street Tavern and Wing Itz in Hampton, NH; Essex Street Inn in Newburyport, MA; and Mountain Edge Suites in Newbury, NH. Mackenzie’s commitment to quality and customer satisfaction means your project will be treated like it’s her own home.</p>
-      </div>
-      <div class="flex justify-center items-center">
-        <img src="gallery/commercial/lstreet-tavern.jpg" alt="L Street Tavern painted exterior" class="rounded shadow-md max-h-64 object-cover">
+        <h3 class="text-2xl mb-2">Why Choose Mackenzie?</h3>
+        <p class="text-base text-sand-dollar">
+          With a decade of hands-on experience—including local favorites like L St Tavern and Wing Itz in Hampton—Mackenzie Doherty brings pride, detail, and heart to every home and business she paints. From the Essex Street Inn in Newburyport to Mountain Edge Suites in Newbury, NH, chances are she’s already transformed a space you know and love.
+        </p>
       </div>
     </section>
   </main>
 
-  <footer class="bg-gray-100 text-center py-6 mt-12 text-sm text-gray-600">
+  <footer class="bg-pale-oak text-center py-6 text-sm text-oyster-shell">
     &copy; 2025 Mackenzie Doherty Painting • <a href="mailto:mackenzie.doherty12@gmail.com" class="underline">Email</a> • <a href="tel:9786416178" class="underline">Call</a>
   </footer>
-
 </body>
 </html>
