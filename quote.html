@@ -24,7 +24,9 @@
       <h1>Request a Quote</h1>
       <p>Fill out the form below or use Patch, our digital assistant, to help you prepare your quote request.</p>
 
-      <form action="#" method="POST" class="quote-form">
+      <form name="quote" method="POST" data-netlify="true" action="/thank-you.html" class="quote-form">
+        <input type="hidden" name="form-name" value="quote" />
+
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" required />
 
