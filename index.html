@@ -1,126 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mackenzie Doherty Painting</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    html, body {
+<title>Mackenzie Doherty Painting</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+    body, html {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
       height: 100%;
-      width: 100%;
-      background: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png') center center / cover no-repeat;
-      z-index: -2;
     }
 
-    body {
-      background-color: rgba(255, 255, 255, 0.75); /* overlay transparency */
-      position: relative;
-      z-index: 0;
+    .background-wrapper {
+      background-image: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    .scrolling-gallery {
-      padding: 2rem 1rem;
-      background: var(--bg-light, #f9f9f9);
-      position: relative;
+    .background-overlay {
+      background-color: rgba(255, 255, 255, 0.75); /* soft translucent layer */
+      min-height: 100vh;
     }
 
-    .carousel {
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-    }
+.scrolling-gallery {
+padding: 2rem 1rem;
+background: var(--bg-light);
+position: relative;
+}
 
-    .carousel-track {
-      display: flex;
-      gap: 2rem;
-      transition: transform 0.3s ease-in-out;
-    }
+.carousel {
+overflow: hidden;
+width: 100%;
+position: relative;
+}
 
-    .carousel-track img {
-      max-height: 250px;
-      object-fit: cover;
-      border-radius: 6px;
-      flex-shrink: 0;
-      cursor: pointer;
-    }
+.carousel-track {
+display: flex;
+gap: 2rem;
+transition: transform 0.3s ease-in-out;
+}
 
-    .carousel-nav {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
+.carousel-track img {
+max-height: 250px;
+object-fit: cover;
+border-radius: 6px;
+flex-shrink: 0;
+cursor: pointer;
+}
 
-    .carousel-nav button {
-      background: rgba(255, 255, 255, 0.8);
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      pointer-events: all;
-      padding: 0.2rem 0.6rem;
-      border-radius: 0.5rem;
-    }
+.carousel:hover .carousel-track {
+animation-play-state: paused;
+}
 
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      flex-direction: column;
-    }
+.carousel-nav {
+position: absolute;
+top: 50%;
+@@ -40,6 +64,7 @@
+transform: translateY(-50%);
+pointer-events: none;
+}
 
-    .lightbox img {
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 8px;
-    }
+.carousel-nav button {
+background: rgba(255, 255, 255, 0.8);
+border: none;
+@@ -49,6 +74,7 @@
+padding: 0.2rem 0.6rem;
+border-radius: 0.5rem;
+}
 
-    .lightbox:target {
-      display: flex;
-    }
+.lightbox {
+display: none;
+position: fixed;
+@@ -62,21 +88,25 @@
+z-index: 1000;
+flex-direction: column;
+}
 
-    .lightbox-controls {
-      display: flex;
-      justify-content: space-between;
-      width: 80%;
-      align-items: center;
-      margin-top: 1rem;
-    }
+.lightbox img {
+max-width: 80%;
+max-height: 80%;
+border-radius: 8px;
+}
 
-    .lightbox-controls a {
-      color: white;
-      font-size: 2rem;
-      text-decoration: none;
-      padding: 0 1rem;
-    }
+.lightbox:target {
+display: flex;
+}
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #333;
-    }
-  </style>
+.lightbox-controls {
+display: flex;
+justify-content: space-between;
+width: 80%;
+align-items: center;
+margin-top: 1rem;
+}
+
+.lightbox-controls a {
+color: white;
+font-size: 2rem;
+@@ -86,106 +116,61 @@
+</style>
 </head>
 <body>
   <header>
@@ -141,6 +117,7 @@
       <p>Premium interior and exterior painting across the Seacoast and North Shore.</p>
     </section>
 
+    <!-- Scrollable Gallery Section -->
     <section class="scrolling-gallery">
       <h2>Project Highlights</h2>
       <div class="carousel" id="carousel">
@@ -150,6 +127,134 @@
           <a href="#img3"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/closet-1_uli2kt.jpg" alt="Closet"></a>
           <a href="#img4"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway"></a>
           <a href="#img5"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room"></a>
-        </div>
+  <div class="background-wrapper">
+    <div class="background-overlay">
+      <header>
+        <nav>
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="quote.html">Get a Quote</a>
+          <a href="contact.html">Contact</a>
+          <a href="reviews.html">Leave a Review</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h1>Welcome to Mackenzie Doherty Painting</h1>
+          <p>Premium interior and exterior painting across the Seacoast and North Shore.</p>
+        </section>
+
+        <section class="scrolling-gallery">
+          <h2>Project Highlights</h2>
+          <div class="carousel" id="carousel">
+            <div class="carousel-track" id="carouselTrack">
+              <a href="#img1"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom"></a>
+              <a href="#img2"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2"></a>
+              <a href="#img3"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/closet-1_uli2kt.jpg" alt="Closet"></a>
+              <a href="#img4"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway"></a>
+              <a href="#img5"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room"></a>
+            </div>
+            <div class="carousel-nav">
+              <button id="prev">‹</button>
+              <button id="next">›</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lightboxes -->
+        <div id="img1" class="lightbox">
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
+          <div class="lightbox-controls">
+            <a href="#img5">‹</a>
+            <a href="#">✕</a>
+            <a href="#img2">›</a>
+          </div>
+</div>
         <div class="carousel-nav">
-          <button id
+          <button id="prev">‹</button>
+          <button id="next">›</button>
+        <div id="img2" class="lightbox">
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
+          <div class="lightbox-controls">
+            <a href="#img1">‹</a>
+            <a href="#">✕</a>
+            <a href="#img3">›</a>
+          </div>
+</div>
+      </div>
+    </section>
+
+    <!-- Lightboxes -->
+    <div id="img1" class="lightbox">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
+      <div class="lightbox-controls">
+        <a href="#img5">‹</a>
+        <a href="#">✕</a>
+        <a href="#img2">›</a>
+      </div>
+    </div>
+    <div id="img2" class="lightbox">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
+      <div class="lightbox-controls">
+        <a href="#img1">‹</a>
+        <a href="#">✕</a>
+        <a href="#img3">›</a>
+      </div>
+    </div>
+    <div id="img3" class="lightbox">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet">
+      <div class="lightbox-controls">
+        <a href="#img2">‹</a>
+        <a href="#">✕</a>
+        <a href="#img4">›</a>
+      </div>
+    </div>
+    <div id="img4" class="lightbox">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway">
+      <div class="lightbox-controls">
+        <a href="#img3">‹</a>
+        <a href="#">✕</a>
+        <a href="#img5">›</a>
+      </div>
+    </div>
+    <div id="img5" class="lightbox">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room">
+      <div class="lightbox-controls">
+        <a href="#img4">‹</a>
+        <a href="#">✕</a>
+        <a href="#img1">›</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Mackenzie Doherty Painting</p>
+  </footer>
+
+  <script>
+    const track = document.getElementById('carouselTrack');
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+
+    let scrollAmount = 0;
+    const scrollStep = 300;
+
+    nextBtn.addEventListener('click', () => {
+      scrollAmount += scrollStep;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+
+    prevBtn.addEventListener('click', () => {
+      scrollAmount = Math.max(scrollAmount - scrollStep, 0);
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+  </script>
+</body>
+</html>
+        <div id="img3" class="lightbox">
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet">
+          <div class="lightbox-controls">
+            <a href="#img2">
