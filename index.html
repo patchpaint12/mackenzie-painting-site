@@ -26,6 +26,7 @@
       object-fit: cover;
       border-radius: 6px;
       flex-shrink: 0;
+      cursor: pointer;
     }
     .carousel:hover .carousel-track {
       animation-play-state: paused;
@@ -47,6 +48,26 @@
       pointer-events: all;
       padding: 0.2rem 0.6rem;
       border-radius: 0.5rem;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    .lightbox:target {
+      display: flex;
     }
   </style>
 </head>
@@ -74,11 +95,11 @@
       <h2>Project Highlights</h2>
       <div class="carousel" id="carousel">
         <div class="carousel-track" id="carouselTrack">
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/closet-1_uli2kt.jpg" alt="Closet">
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway">
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room">
+          <a href="#img1"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom"></a>
+          <a href="#img2"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2"></a>
+          <a href="#img3"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/closet-1_uli2kt.jpg" alt="Closet"></a>
+          <a href="#img4"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway"></a>
+          <a href="#img5"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room"></a>
         </div>
         <div class="carousel-nav">
           <button id="prev">‹</button>
@@ -86,6 +107,14 @@
         </div>
       </div>
     </section>
+
+    <!-- Lightboxes -->
+    <div id="img1" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom"></a></div>
+    <div id="img2" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2"></a></div>
+    <div id="img3" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet"></a></div>
+    <div id="img4" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway"></a></div>
+    <div id="img5" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room"></a></div>
+
   </main>
 
   <footer>
