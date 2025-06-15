@@ -1,28 +1,22 @@
+<title>Mackenzie Doherty Painting</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+    body, html {
+    html, body {
 margin: 0;
 padding: 0;
 height: 100%;
-      font-family: sans-serif;
-}
-
-    .background-wrapper {
-    .background-image {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-background-image: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png');
-background-size: cover;
-      background-attachment: fixed;
+@@ -18,11 +18,19 @@
+background-attachment: fixed;
 background-position: center;
 background-repeat: no-repeat;
       min-height: 100%;
-      z-index: -2;
 }
 
-    .background-overlay {
-    .page-content {
-background-color: rgba(255, 255, 255, 0.75);
+.background-overlay {
+      background-color: rgba(255, 255, 255, 0.75); /* soft translucent layer */
+      min-height: 100vh;
+      background-color: rgba(255, 255, 255, 0.75);
       min-height: 100%;
       min-height: 100dvh;
       display: flex;
@@ -31,156 +25,30 @@ background-color: rgba(255, 255, 255, 0.75);
 
     main {
       flex-grow: 1;
-      position: relative;
-      z-index: 1;
 }
 
 .scrolling-gallery {
-@@ -124,43 +123,108 @@
-</style>
-</head>
-<body>
-  <div class="background-wrapper">
-    <div class="background-overlay">
-      <header>
-        <nav>
-          <a href="index.html" class="active">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="quote.html">Get a Quote</a>
-          <a href="contact.html">Contact</a>
-          <a href="reviews.html">Leave a Review</a>
-        </nav>
-      </header>
+@@ -155,22 +163,4 @@ <h2>Project Highlights</h2>
 
-      <main>
-        <section class="hero">
-          <h1>Welcome to Mackenzie Doherty Painting</h1>
-          <p>Premium interior and exterior painting across the Seacoast and North Shore.</p>
-        </section>
-
-        <section class="scrolling-gallery">
-          <h2>Project Highlights</h2>
-          <div class="carousel" id="carousel">
-            <div class="carousel-track" id="carouselTrack">
-              <a href="#img1"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom"></a>
-              <a href="#img2"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2"></a>
-              <a href="#img3"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/closet-1_uli2kt.jpg" alt="Closet"></a>
-              <a href="#img4"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway"></a>
-              <a href="#img5"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room"></a>
-            </div>
-            <div class="carousel-nav">
-              <button id="prev">‹</button>
-              <button id="next">›</button>
-            </div>
-  <div class="background-image"></div>
-  <div class="page-content">
-    <header>
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="quote.html">Get a Quote</a>
-        <a href="contact.html">Contact</a>
-        <a href="reviews.html">Leave a Review</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <h1>Welcome to Mackenzie Doherty Painting</h1>
-        <p>Premium interior and exterior painting across the Seacoast and North Shore.</p>
-      </section>
-
-      <section class="scrolling-gallery">
-        <h2>Project Highlights</h2>
-        <div class="carousel" id="carousel">
-          <div class="carousel-track" id="carouselTrack">
-            <a href="#img1"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom"></a>
-            <a href="#img2"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2"></a>
-            <a href="#img3"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/closet-1_uli2kt.jpg" alt="Closet"></a>
-            <a href="#img4"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway"></a>
-            <a href="#img5"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room"></a>
-</div>
-        </section>
-
-        <!-- Lightboxes -->
-        <div id="img1" class="lightbox">
-          <img src="https://res.cloudinary.com/dbkxem63v/i
-          <div class="carousel-nav">
-            <button id="prev">‹</button>
-            <button id="next">›</button>
+<!-- Lightboxes -->
+<div id="img1" class="lightbox">
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
+          <div class="lightbox-controls">
+            <a href="#img5">‹</a>
+            <a href="#">✕</a>
+            <a href="#img2">›</a>
           </div>
         </div>
-      </section>
-
-      <!-- Lightboxes -->
-      <div id="img1" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
-        <div class="lightbox-controls">
-          <a href="#img5">‹</a>
-          <a href="#">✕</a>
-          <a href="#img2">›</a>
+        <div id="img2" class="lightbox">
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
+          <div class="lightbox-controls">
+            <a href="#img1">‹</a>
+            <a href="#">✕</a>
+            <a href="#img3">›</a>
+          </div>
         </div>
-      </div>
-      <div id="img2" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
-        <div class="lightbox-controls">
-          <a href="#img1">‹</a>
-          <a href="#">✕</a>
-          <a href="#img3">›</a>
-        </div>
-      </div>
-      <div id="img3" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet">
-        <div class="lightbox-controls">
-          <a href="#img2">‹</a>
-          <a href="#">✕</a>
-          <a href="#img4">›</a>
-        </div>
-      </div>
-      <div id="img4" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway">
-        <div class="lightbox-controls">
-          <a href="#img3">‹</a>
-          <a href="#">✕</a>
-          <a href="#img5">›</a>
-        </div>
-      </div>
-      <div id="img5" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room">
-        <div class="lightbox-controls">
-          <a href="#img4">‹</a>
-          <a href="#">✕</a>
-          <a href="#img1">›</a>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <p>© 2025 Mackenzie Doherty Painting</p>
-    </footer>
-  </div>
-
-  <script>
-    const track = document.getElementById('carouselTrack');
-    const nextBtn = document.getElementById('next');
-    const prevBtn = document.getElementById('prev');
-
-    let scrollAmount = 0;
-    const scrollStep = 300;
-
-    nextBtn.addEventListener('click', () => {
-      scrollAmount += scrollStep;
-      track.style.transform = `translateX(-${scrollAmount}px)`;
-    });
-
-    prevBtn.addEventListener('click', () => {
-      scrollAmount = Math.max(scrollAmount - scrollStep, 0);
-      track.style.transform = `translateX(-${scrollAmount}px)`;
-    });
-  </script>
-</body>
-</html>
+        <div id="img3" class="lightbox">
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet">
+          <div class="lightbox-controls">
+            <a href="#img2">
+          <img src="https://res.cloudinary.com/dbkxem63v/i
