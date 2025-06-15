@@ -1,31 +1,12 @@
-/* Base styles */
 html, body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #f5f5f5;
 }
 
-/* Fixed background image for index.html */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png') center center / cover no-repeat;
-  z-index: -2;
-}
-
-body {
-  background-color: rgba(255, 255, 255, 0.75);
-  position: relative;
-  z-index: 0;
-}
-
-/* Navigation styles */
 nav {
-  background-color: #ffffffcc;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -34,7 +15,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
@@ -46,7 +27,6 @@ nav a.active {
   color: #0077aa;
 }
 
-/* Hero section */
 .hero {
   display: flex;
   justify-content: center;
@@ -54,19 +34,19 @@ nav a.active {
   min-height: 60vh;
   text-align: center;
   padding: 2rem;
+  background: linear-gradient(to right, #ffffff, #f0f0f0);
 }
 
 .hero-banner {
-  background: rgba(255, 255, 255, 0.85);
+  background: white;
   padding: 2rem 3rem;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Gallery / Carousel */
 .scrolling-gallery {
   padding: 2rem 1rem;
-  background: var(--bg-light, #f9f9f9);
+  background: #f9f9f9;
   position: relative;
 }
 
@@ -110,7 +90,6 @@ nav a.active {
   border-radius: 0.5rem;
 }
 
-/* Lightbox */
 .lightbox {
   display: none;
   position: fixed;
@@ -150,7 +129,6 @@ nav a.active {
   padding: 0 1rem;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
