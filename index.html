@@ -5,34 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mackenzie Doherty Painting</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>.bg-newburyport-blue { background-color: #264e70; }</style>
+  <style>
+    .bg-newburyport-blue { background-color: #264e70; }
+    .bg-sand-dollar { background-color: #ece5d1; }
+    .text-oyster-shell { color: #c2bdb5; }
+    .font-serif { font-family: 'Georgia', serif; }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
-  <header class="bg-newburyport-blue text-white p-6 sticky top-0 shadow z-10">
+<body class="bg-sand-dollar text-gray-800">
+
+  <header class="bg-newburyport-blue text-white p-6 shadow sticky top-0 z-10">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Mackenzie Doherty Painting</h1>
-      <nav class="space-x-6">
+      <h1 class="text-2xl font-bold font-serif">Mackenzie Doherty Painting</h1>
+      <nav class="space-x-6 text-sm">
         <a href="index.html" class="underline font-semibold">Home</a>
         <a href="services.html" class="hover:underline">Services</a>
-        <a href="quote.html" class="hover:underline">Quote</a>
         <a href="gallery.html" class="hover:underline">Gallery</a>
-        <a href="about.html" class="hover:underline">About</a>
+        <a href="quote.html" class="hover:underline">Quote</a>
         <a href="review.html" class="hover:underline">Leave a Review</a>
+        <a href="about.html" class="hover:underline">About</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto p-6 space-y-8">
-    <section class="text-center space-y-4">
-      <h2 class="text-4xl font-bold">Elevate Your Home with Timeless Color</h2>
-      <p class="text-lg text-gray-600">Professional, reliable, and committed to detail — serving the Seacoast of New Hampshire and North Shore Massachusetts.</p>
+  <main class="max-w-5xl mx-auto p-6 space-y-10">
+    <section class="text-center">
+      <h2 class="text-4xl font-bold font-serif mb-4">Elevate Your Home with Timeless Coastal Color</h2>
+      <p class="text-lg text-gray-700 max-w-xl mx-auto">Serving New Hampshire’s Seacoast and Massachusetts’ North Shore, Mackenzie Doherty brings expert craftsmanship and thoughtful design to every paint project—from historic homes to local restaurants and boutique hotels.</p>
+    </section>
+
+    <section class="bg-white p-6 rounded shadow space-y-4">
+      <h3 class="text-2xl font-bold text-newburyport-blue">Why Choose Mackenzie?</h3>
+      <p>
+        With over a decade of hands-on experience, I began my journey in my family’s painting business and later established my own. From iconic local spots like L Street Tavern and Wing-Itz in Hampton, NH, to charming boutique hotels like the Essex Street Inn in Newburyport and Mountain Edge Suites in Newbury, NH—I’ve brought life and personality to hundreds of spaces.
+      </p>
+      <p>
+        I take immense pride in my work. Every detail matters, and every client is treated like a neighbor—because often, they are. My reputation is built on word of mouth, quality finishes, and never leaving a job until the customer is thrilled.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-4 rounded shadow">
+        <h4 class="font-semibold text-lg mb-2 text-newburyport-blue">Interior Painting</h4>
+        <p>Warm finishes, clean edges, and crisp lines that transform your living space into a sanctuary.</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h4 class="font-semibold text-lg mb-2 text-newburyport-blue">Exterior Painting</h4>
+        <p>Protect and enhance your home’s curb appeal with expert surface preparation and weather-ready paint.</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h4 class="font-semibold text-lg mb-2 text-newburyport-blue">Cabinet Refinishing</h4>
+        <p>Give new life to your kitchen or built-ins with premium-grade cabinet refinishing and detailing.</p>
+      </div>
     </section>
   </main>
 
   <footer class="bg-gray-100 text-center py-6 mt-12 text-sm text-gray-600">
-    &copy; 2025 Mackenzie Doherty Painting • 
-    <a href="mailto:mackenzie.doherty12@gmail.com" class="underline">Email</a> • 
-    <a href="tel:9786416178" class="underline">Call</a>
+    &copy; 2025 Mackenzie Doherty Painting • <a href="mailto:mackenzie.doherty12@gmail.com" class="underline">Email</a> • <a href="tel:9786416178" class="underline">Call</a>
   </footer>
+
 </body>
 </html>
