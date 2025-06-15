@@ -6,7 +6,7 @@
   <title>Mackenzie Doherty Painting</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -18,11 +18,19 @@
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
+      min-height: 100%;
     }
 
     .background-overlay {
-      background-color: rgba(255, 255, 255, 0.75); /* soft translucent layer */
-      min-height: 100vh;
+      background-color: rgba(255, 255, 255, 0.75);
+      min-height: 100%;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex-grow: 1;
     }
 
     .scrolling-gallery {
@@ -155,22 +163,4 @@
 
         <!-- Lightboxes -->
         <div id="img1" class="lightbox">
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
-          <div class="lightbox-controls">
-            <a href="#img5">‹</a>
-            <a href="#">✕</a>
-            <a href="#img2">›</a>
-          </div>
-        </div>
-        <div id="img2" class="lightbox">
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
-          <div class="lightbox-controls">
-            <a href="#img1">‹</a>
-            <a href="#">✕</a>
-            <a href="#img3">›</a>
-          </div>
-        </div>
-        <div id="img3" class="lightbox">
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet">
-          <div class="lightbox-controls">
-            <a href="#img2">
+          <img src="https://res.cloudinary.com/dbkxem63v/i
