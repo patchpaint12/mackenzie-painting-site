@@ -30,18 +30,18 @@
       <h2>Project Highlights</h2>
       <div class="carousel" id="carousel">
         <div class="carousel-track" id="carouselTrack">
-          <a href="#img1"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_600/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom"></a>
-          <a href="#img2"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2"></a>
+          <a href="#img1"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room"></a>
+          <a href="#img2"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway"></a>
           <a href="#img3"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet"></a>
-          <a href="#img4"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013246/hallway-1_vgzooi.jpg" alt="Hallway"></a>
-          <a href="#img5"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013327/kitchen-1_mihkdz.jpg" alt="Kitchen"></a>
+          <a href="#img4"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom"></a>
+          <a href="#img5"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Northern Bedroom"></a>
         </div>
       </div>
     </section>
 
     <!-- Lightboxes -->
     <div id="img1" class="lightbox">
-      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room">
       <div class="lightbox-controls">
         <a href="#img5">‹</a>
         <a href="#">✕</a>
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div id="img2" class="lightbox">
-      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway">
       <div class="lightbox-controls">
         <a href="#img1">‹</a>
         <a href="#">✕</a>
@@ -65,7 +65,7 @@
       </div>
     </div>
     <div id="img4" class="lightbox">
-      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013246/hallway-1_vgzooi.jpg" alt="Hallway">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom">
       <div class="lightbox-controls">
         <a href="#img3">‹</a>
         <a href="#">✕</a>
@@ -73,7 +73,7 @@
       </div>
     </div>
     <div id="img5" class="lightbox">
-      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013327/kitchen-1_mihkdz.jpg" alt="Kitchen">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Northern Bedroom">
       <div class="lightbox-controls">
         <a href="#img4">‹</a>
         <a href="#">✕</a>
@@ -89,14 +89,15 @@
   <script>
     const track = document.getElementById('carouselTrack');
     let scrollAmount = 0;
+    let direction = 1;
     function autoScroll() {
-      scrollAmount++;
-      if (scrollAmount >= track.scrollWidth - track.clientWidth) {
-        scrollAmount = 0;
+      scrollAmount += direction * 1;
+      if (scrollAmount >= track.scrollWidth - track.clientWidth || scrollAmount <= 0) {
+        direction *= -1;
       }
       track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
     }
-    setInterval(autoScroll, 30);
+    setInterval(autoScroll, 20);
   </script>
 </body>
 </html>
