@@ -36,9 +36,12 @@ body.page-overlay {
   pointer-events: none;
 }
 
-.page-overlay .hero,
-.page-overlay .carousel {
-  background-color: transparent;
+.page-overlay main {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 header, footer {
