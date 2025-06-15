@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leave a Review | Mackenzie Doherty</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="quote.html">Get a Quote</a>
+      <a href="contact.html">Contact</a>
+      <a href="reviews.html" class="active">Leave a Review</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="reviews">
+      <h1>Leave a Review</h1>
+      <p>We'd love to hear about your experience. Share your thoughts below — and feel free to upload a photo of the finished work!</p>
+
+      <form action="#" method="POST" class="review-form" enctype="multipart/form-data">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email (optional)</label>
+        <input type="email" id="email" name="email" />
+
+        <label for="review">Your Review</label>
+        <textarea id="review" name="review" rows="5" required></textarea>
+
+        <label for="image">Upload a Photo (optional)</label>
+        <input type="file" id="image" name="image" accept="image/*" />
+
+        <p class="disclaimer">* All reviews are subject to approval before being published to the website.</p>
+
+        <button type="submit">Submit Review</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mackenzie Doherty Painting</p>
+  </footer>
+</body>
+</html>
