@@ -1,3 +1,5 @@
+/* styles.css */
+
 :root {
   --cloud-white: #f0efeb;
   --pale-oak: #eae3db;
@@ -19,12 +21,14 @@ body {
   line-height: 1.6;
 }
 
-body.page-overlay {
+body.page-overlay.page-with-background {
+  background: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png') no-repeat center center fixed;
+  background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
-.page-overlay::before {
+body.page-overlay::before {
   content: "";
   position: fixed;
   top: 0;
@@ -32,7 +36,7 @@ body.page-overlay {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.85);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -49,7 +53,7 @@ body.page-overlay {
 .page-overlay nav,
 .page-overlay footer,
 .page-overlay .hero {
-  background-color: transparent;
+  background-color: var(--white-dove);
   z-index: 2;
   position: relative;
 }
@@ -148,6 +152,14 @@ h2 {
   cursor: pointer;
   padding: 0.2rem 0.6rem;
   border-radius: 0.5rem;
+}
+
+.carousel-track img {
+  max-height: 250px;
+  width: auto;
+  margin-right: 1rem;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .lightbox {
@@ -258,7 +270,24 @@ form button:hover {
   margin-top: 0.5rem;
 }
 
-.page-with-background {
-  background: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png') no-repeat center center fixed;
+body.about-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://res.cloudinary.com/dbkxem63v/image/upload/v1750018461/landing-page_ebz4ar.png');
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+body.about-page .content-overlay {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
 }
