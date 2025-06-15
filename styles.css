@@ -1,137 +1,157 @@
-html, body {
+:root {
+  --cloud-white: #f0efeb;
+  --pale-oak: #eae3db;
+  --white-dove: #f5f5f2;
+  --newburyport-blue: #2f3e55;
+  --oyster-shell: #d6cdc3;
+  --shell-pink: #f4d7d7;
+  --boothbay-gray: #a3b3bb;
+  --text-gray: #444;
+  --font-primary: 'Georgia', serif;
+  --font-secondary: 'Helvetica Neue', sans-serif;
+}
+
+body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #f5f5f5;
+  font-family: var(--font-secondary);
+  background-color: var(--cloud-white);
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+header, footer {
+  background-color: var(--white-dove);
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
 nav {
-  background-color: #fff;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  padding: 1rem 0;
-  font-weight: bold;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 nav a {
+  color: var(--newburyport-blue);
   text-decoration: none;
-  color: #333;
+  font-weight: 600;
 }
 
+nav a:hover,
 nav a.active {
-  color: #0077aa;
+  border-bottom: 2px solid var(--boothbay-gray);
+}
+
+main {
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h1, h2 {
+  font-family: var(--font-primary);
+  color: var(--newburyport-blue);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
 }
 
 .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60vh;
   text-align: center;
-  padding: 2rem;
-  background: linear-gradient(to right, #ffffff, #f0f0f0);
-}
-
-.hero-banner {
-  background: white;
-  padding: 2rem 3rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.scrolling-gallery {
   padding: 2rem 1rem;
-  background: #f9f9f9;
-  position: relative;
+  background-color: var(--pale-oak);
+  border-radius: 6px;
 }
 
 .carousel {
   overflow: hidden;
   width: 100%;
   position: relative;
+  margin: 2rem 0;
+  background-color: var(--white-dove);
+  border-radius: 4px;
 }
 
 .carousel-track {
   display: flex;
-  gap: 2rem;
-  transition: transform 0.3s ease-in-out;
+  animation: scroll-left 20s linear infinite;
 }
 
-.carousel-track img {
-  max-height: 250px;
-  object-fit: cover;
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+form {
+  background-color: var(--white-dove);
+  padding: 1.5rem;
   border-radius: 6px;
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-.carousel-nav {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.carousel-nav button {
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  pointer-events: all;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.5rem;
-}
-
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  flex-direction: column;
-}
-
-.lightbox img {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 8px;
-}
-
-.lightbox:target {
-  display: flex;
-}
-
-.lightbox-controls {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  align-items: center;
   margin-top: 1rem;
 }
 
-.lightbox-controls a {
-  color: white;
-  font-size: 2rem;
-  text-decoration: none;
-  padding: 0 1rem;
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
+form input[type="text"],
+form input[type="email"],
+form input[type="file"],
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--font-secondary);
+}
+
+form button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--newburyport-blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--boothbay-gray);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.disclaimer {
   font-size: 0.9rem;
-  color: #333;
+  color: var(--text-gray);
+  font-style: italic;
+  margin-top: 0.5rem;
 }
