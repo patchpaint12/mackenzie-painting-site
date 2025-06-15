@@ -1,0 +1,20 @@
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin: 2rem 0;
+}
+.carousel-track {
+  display: flex;
+  animation: scroll-left 20s linear infinite;
+}
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: center;
+}
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
