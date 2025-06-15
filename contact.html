@@ -22,26 +22,21 @@
   <main>
     <section class="contact">
       <h1>Contact Mackenzie</h1>
-      <p>Have a question, need more information, or want to talk about a project? Get in touch below.</p>
+      <p>If you have a question or want to get in touch, just fill out the form below.</p>
+      <form name="contact" method="POST" data-netlify="true" action="thank-you.html">
+        <input type="hidden" name="form-name" value="contact" />
 
-      <form action="#" method="POST" class="contact-form">
-        <label for="name">Your Name</label>
+        <label for="name">Name:</label>
         <input type="text" id="name" name="name" required />
 
-        <label for="email">Email Address</label>
+        <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
         <button type="submit">Send Message</button>
       </form>
-
-      <div class="contact-details">
-        <p><strong>Email:</strong> <a href="mailto:mackenzie.doherty12@gmail.com">mackenzie.doherty12@gmail.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+19786416178">(978) 641-6178</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mackenzie-doherty-370079177/" target="_blank">View Profile</a></p>
-      </div>
     </section>
   </main>
 
