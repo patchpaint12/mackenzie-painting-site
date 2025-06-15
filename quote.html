@@ -1,1 +1,59 @@
-<!DOCTYPE html><html><head><title>Quote</title></head><body><h1>Quote Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Quote | Mackenzie Doherty</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="quote.html" class="active">Get a Quote</a>
+      <a href="contact.html">Contact</a>
+      <a href="reviews.html">Leave a Review</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="quote">
+      <h1>Request a Quote</h1>
+      <p>Fill out the form below or use Patch, our digital assistant, to help you prepare your quote request.</p>
+
+      <form action="#" method="POST" class="quote-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="details">Describe the job</label>
+        <textarea id="details" name="details" rows="6" placeholder="E.g. 3 bedrooms, trim, ceilings, light wall repairs..."></textarea>
+
+        <label for="timeline">Ideal Timeline</label>
+        <input type="text" id="timeline" name="timeline" placeholder="E.g. ASAP, Flexible, Hoping for September..." />
+
+        <button type="submit">Submit Request</button>
+      </form>
+
+      <div class="quote-agent">
+        <h2>Or Talk to Patch</h2>
+        <p>Need help figuring out what to include? Our assistant Patch can guide you through the process.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mackenzie Doherty Painting</p>
+  </footer>
+
+  <!-- Chatbase Quote Agent -->
+  <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="Viwp7tWABAMjUq4ATybwr";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+</body>
+</html>
