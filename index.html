@@ -16,14 +16,26 @@
     .site-logo {
       position: fixed;
       top: 10px;
-      left: 50px;
+      left: 20px;
       z-index: 1000;
     }
     .site-logo img {
-      height: 240px;
+      height: 80px;
       width: auto;
     }
-  </style>
+      #mainNav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--cloud-white);
+      transition: top 0.3s ease;
+      z-index: 999;
+    }
+    #mainNav.hide-nav {
+      top: -100px;
+    }
+</style>
 </head>
 <body class="page-overlay page-with-background">
   <div class="site-logo">
@@ -32,7 +44,8 @@
     </a>
   </div>
   <header>
-     <nav>
+  <div id="mainNav">
+    <nav>
       <a href="index.html" class="active">Home</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
@@ -40,8 +53,9 @@
       <a href="reviews.html">Reviews</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+        </nav>
+  </div>
+</header>
 
   <section class="home-cta" style="text-align:center; padding:2rem;">
     <a href="quote.html" class="cta-button" style="background-color:#2f3e55; color:white; padding:0.75rem 1.5rem; font-size:1.25rem; border-radius:8px; text-decoration:none;">
@@ -128,6 +142,24 @@
       track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
     }
     setInterval(autoScroll, 20);
-  </script>
+      // Scroll-hide/show nav
+    let lastScrollY = window.scrollY;
+    let nav = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        nav.classList.add('hide-nav');
+      } else {
+        nav.classList.remove('hide-nav');
+      }
+      lastScrollY = window.scrollY;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (e.clientY < 50) {
+        nav.classList.remove('hide-nav');
+      }
+    });
+</script>
 </body>
 </html>
