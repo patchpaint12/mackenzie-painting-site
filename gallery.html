@@ -65,22 +65,52 @@
       text-decoration: none;
       padding: 0 1rem;
     }
+    .site-logo {
+      position: fixed;
+      top: 10px;
+      left: 20px;
+      z-index: 1000;
+    }
+    .site-logo img {
+      height: 80px;
+      width: auto;
+    }
+    #mainNav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--cloud-white);
+      transition: top 0.3s ease;
+      z-index: 999;
+    }
+    #mainNav.hide-nav {
+      top: -100px;
+    }
   </style>
 </head>
-<body>
+<body class="page-overlay page-with-background">
+  <div class="site-logo">
+    <a href="index.html">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750115611/logo_iu3oxy.png" alt="Doherty Painting Logo">
+    </a>
+  </div>
+
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="quote.html">Get a Quote</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div id="mainNav">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="quote.html">Get a Quote</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="content-overlay">
     <section class="gallery">
       <h1>Gallery of Work</h1>
       <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem auto; text-align: center;">
@@ -127,82 +157,103 @@
         </figure>
       </div>
 
-      <!-- Lightboxes remain as originally implemented -->
-
       <div style="text-align:center; margin-top:2rem;">
         <a href="reviews.html" class="cta-button" style="margin: 0 1rem; background-color:#2f3e55; color:white; padding:0.75rem 1.5rem; font-size:1rem; border-radius:6px; text-decoration:none;">Read Reviews</a>
         <a href="quote.html" class="cta-button" style="margin: 0 1rem; background-color:#2f3e55; color:white; padding:0.75rem 1.5rem; font-size:1rem; border-radius:6px; text-decoration:none;">Get a Quote</a>
       </div>
-    <!-- Lightboxes -->
-<div id="c1" class="lightbox">
-  <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013667/essex-st.inn-bedroom_nzkjoh.jpg" alt="Essex Street Inn Bedroom 1">
-  <div class="lightbox-controls">
-    <a href="#c3">‹</a>
-    <a href="#">✕</a>
-    <a href="#c2">›</a>
-  </div>
-</div>
-<div id="c2" class="lightbox">
-  <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013665/essex-st.-inn-bderoom-2_x5f9eo.jpg" alt="Essex Street Inn Bedroom 2">
-  <div class="lightbox-controls">
-    <a href="#c1">‹</a>
-    <a href="#">✕</a>
-    <a href="#c3">›</a>
-  </div>
-</div>
-<div id="c3" class="lightbox">
-  <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013576/essex-st.-inn-1_bzpvfo.jpg" alt="Essex Street Inn Exterior">
-  <div class="lightbox-controls">
-    <a href="#c2">‹</a>
-    <a href="#">✕</a>
-    <a href="#c1">›</a>
-  </div>
-</div>
-<div id="r1" class="lightbox">
-  <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
-  <div class="lightbox-controls">
-    <a href="#r5">‹</a>
-    <a href="#">✕</a>
-    <a href="#r2">›</a>
-  </div>
-</div>
-<div id="r2" class="lightbox">
-  <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
-  <div class="lightbox-controls">
-    <a href="#r1">‹</a>
-    <a href="#">✕</a>
-    <a href="#r3">›</a>
-  </div>
-</div>
-<div id="r3" class="lightbox">
-  <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet">
-  <div class="lightbox-controls">
-    <a href="#r2">‹</a>
-    <a href="#">✕</a>
-    <a href="#r4">›</a>
-  </div>
-</div>
-<div id="r4" class="lightbox">
-  <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway">
-  <div class="lightbox-controls">
-    <a href="#r3">‹</a>
-    <a href="#">✕</a>
-    <a href="#r5">›</a>
-  </div>
-</div>
-<div id="r5" class="lightbox">
-  <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room">
-  <div class="lightbox-controls">
-    <a href="#r4">‹</a>
-    <a href="#">✕</a>
-    <a href="#r1">›</a>
-  </div>
-</div>
-</section>
+
+      <!-- Lightboxes -->
+      <div id="c1" class="lightbox">
+        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013667/essex-st.inn-bedroom_nzkjoh.jpg" alt="Essex Street Inn Bedroom 1">
+        <div class="lightbox-controls">
+          <a href="#c3">‹</a>
+          <a href="#">✕</a>
+          <a href="#c2">›</a>
+        </div>
+      </div>
+      <div id="c2" class="lightbox">
+        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013665/essex-st.-inn-bderoom-2_x5f9eo.jpg" alt="Essex Street Inn Bedroom 2">
+        <div class="lightbox-controls">
+          <a href="#c1">‹</a>
+          <a href="#">✕</a>
+          <a href="#c3">›</a>
+        </div>
+      </div>
+      <div id="c3" class="lightbox">
+        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013576/essex-st.-inn-1_bzpvfo.jpg" alt="Essex Street Inn Exterior">
+        <div class="lightbox-controls">
+          <a href="#c2">‹</a>
+          <a href="#">✕</a>
+          <a href="#c1">›</a>
+        </div>
+      </div>
+      <div id="r1" class="lightbox">
+        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
+        <div class="lightbox-controls">
+          <a href="#r5">‹</a>
+          <a href="#">✕</a>
+          <a href="#r2">›</a>
+        </div>
+      </div>
+      <div id="r2" class="lightbox">
+        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
+        <div class="lightbox-controls">
+          <a href="#r1">‹</a>
+          <a href="#">✕</a>
+          <a href="#r3">›</a>
+        </div>
+      </div>
+      <div id="r3" class="lightbox">
+        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet">
+        <div class="lightbox-controls">
+          <a href="#r2">‹</a>
+          <a href="#">✕</a>
+          <a href="#r4">›</a>
+        </div>
+      </div>
+      <div id="r4" class="lightbox">
+        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway">
+        <div class="lightbox-controls">
+          <a href="#r3">‹</a>
+          <a href="#">✕</a>
+          <a href="#r5">›</a>
+        </div>
+      </div>
+      <div id="r5" class="lightbox">
+        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room">
+        <div class="lightbox-controls">
+          <a href="#r4">‹</a>
+          <a href="#">✕</a>
+          <a href="#r1">›</a>
+        </div>
+      </div>
+
+    </section>
   </main>
 
   <footer>
     <p>© 2025 Mackenzie Doherty Painting</p>
   </footer>
+
+  <script>
+    // Scroll-hide/show nav
+    let lastScrollY = window.scrollY;
+    let nav = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        nav.classList.add('hide-nav');
+      } else {
+        nav.classList.remove('hide-nav');
+      }
+      lastScrollY = window.scrollY;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (e.clientY < 50) {
+        nav.classList.remove('hide-nav');
+      }
+    });
+  </script>
 </body>
 </html>
