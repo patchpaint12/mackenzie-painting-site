@@ -5,21 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Request a Quote | Mackenzie Doherty</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .site-logo {
+      position: fixed;
+      top: 10px;
+      left: 20px;
+      z-index: 1000;
+    }
+    .site-logo img {
+      height: 180px;
+      width: auto;
+    }
+    #mainNav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--cloud-white);
+      transition: top 0.3s ease;
+      z-index: 999;
+    }
+    #mainNav.hide-nav {
+      top: -100px;
+    }
+  </style>
 </head>
-<body>
+<body class="page-overlay page-with-background">
+  <div class="site-logo">
+    <a href="index.html">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750115611/logo_iu3oxy.png" alt="Doherty Painting Logo">
+    </a>
+  </div>
+
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="quote.html" class="active">Get a Quote</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-      <a href="reviews.html">Leave a Review</a>
-    </nav>
+    <div id="mainNav">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="quote.html" class="active">Get a Quote</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Leave a Review</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="content-overlay">
     <section class="quote">
       <h1>Request a Quote</h1>
       <p>Fill out the form below or use Patch, our digital assistant, to help you prepare your quote request.</p>
@@ -56,6 +88,25 @@
   <!-- Chatbase Quote Agent -->
   <script>
     (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="Viwp7tWABAMjUq4ATybwr";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+
+    // Scroll-hide/show nav
+    let lastScrollY = window.scrollY;
+    let nav = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        nav.classList.add('hide-nav');
+      } else {
+        nav.classList.remove('hide-nav');
+      }
+      lastScrollY = window.scrollY;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (e.clientY < 50) {
+        nav.classList.remove('hide-nav');
+      }
+    });
   </script>
 </body>
 </html>
