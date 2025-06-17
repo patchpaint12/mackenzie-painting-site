@@ -6,111 +6,49 @@
   <title>About Mackenzie | Mackenzie Doherty Painting</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .gallery-grid figure {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    .gallery-grid img {
-      width: 100%;
-      max-height: 300px;
-      height: auto;
-      object-fit: contain;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .gallery-grid figcaption {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text-gray);
-      text-align: center;
-    }
-    .lightbox {
-      display: none;
+    .site-logo {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
+      top: 10px;
+      left: 20px;
       z-index: 1000;
-      flex-direction: column;
     }
-    .lightbox img {
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 8px;
+    .site-logo img {
+      height: 180px;
+      width: auto;
     }
-    .lightbox:target {
-      display: flex;
-    }
-    .lightbox-controls {
-      display: flex;
-      justify-content: space-between;
-      width: 80%;
-      align-items: center;
-      margin-top: 1rem;
-    }
-    .lightbox-controls a {
-      color: white;
-      font-size: 2rem;
-      text-decoration: none;
-      padding: 0 1rem;
-    }
-    .about-section {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      font-family: 'Georgia', serif;
-    }
-    .about-image {
+    #mainNav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      opacity: 0.35;
-      z-index: -1;
+      background-color: var(--cloud-white);
+      transition: top 0.3s ease;
+      z-index: 999;
     }
-    .about-text {
-      position: relative;
-      z-index: 1;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 2rem;
-      border-radius: 10px;
-      max-width: 800px;
-      font-size: 1.3rem;
-      line-height: 1.6;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      margin-top: 12rem;
-      margin-bottom: 3rem;
+    #mainNav.hide-nav {
+      top: -100px;
     }
   </style>
 </head>
 <body>
+  <div class="site-logo">
+    <a href="index.html">
+      <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750115611/logo_iu3oxy.png" alt="Doherty Painting Logo">
+    </a>
+  </div>
+
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="quote.html">Get a Quote</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div id="mainNav">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="quote.html">Get a Quote</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html" class="active">About</a>
+        <a href="reviews.html">Leave a Review</a>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -133,5 +71,25 @@
   <footer>
     <p>© 2025 Mackenzie Doherty Painting</p>
   </footer>
+
+  <script>
+    let lastScrollY = window.scrollY;
+    let nav = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        nav.classList.add('hide-nav');
+      } else {
+        nav.classList.remove('hide-nav');
+      }
+      lastScrollY = window.scrollY;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (e.clientY < 50) {
+        nav.classList.remove('hide-nav');
+      }
+    });
+  </script>
 </body>
 </html>
