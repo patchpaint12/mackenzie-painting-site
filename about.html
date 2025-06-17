@@ -28,6 +28,39 @@
     #mainNav.hide-nav {
       top: -100px;
     }
+    .about-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+    .about-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: -1;
+    }
+    .about-text {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 800px;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 12rem;
+      margin-bottom: 3rem;
+    }
   </style>
 </head>
 <body>
