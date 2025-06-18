@@ -10,52 +10,59 @@
       height: auto;
       overflow-y: auto;
     }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+    .gallery-wrapper {
+      position: relative;
+      overflow: hidden;
+      margin-top: 2rem;
     }
-    .gallery-grid figure {
+    .gallery-track {
+      display: flex;
+      gap: 1.5rem;
+      animation: scroll-left 60s linear infinite;
+      will-change: transform;
+    }
+    .gallery-track:hover {
+      animation-play-state: paused;
+    }
+    .gallery-track figure {
+      flex: 0 0 auto;
+      width: 300px;
       margin: 0;
       display: flex;
       flex-direction: column;
     }
-    .gallery-grid img {
+    .gallery-track img {
       width: 100%;
-      max-height: 300px;
       height: auto;
-      object-fit: contain;
-      border-radius: 4px;
+      object-fit: cover;
+      border-radius: 6px;
       cursor: pointer;
     }
-    .gallery-grid figcaption {
+    .gallery-track figcaption {
       margin-top: 0.5rem;
       font-size: 0.9rem;
       color: var(--text-gray);
       text-align: center;
     }
-    .site-logo {
-      position: fixed;
-      top: 10px;
-      left: 20px;
-      z-index: 1000;
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .site-logo img {
-      height: 180px;
-      width: auto;
-    }
-    #mainNav {
-      position: fixed;
+    .fade-left, .fade-right {
+      position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
-      background-color: var(--cloud-white);
-      transition: top 0.3s ease;
-      z-index: 999;
+      bottom: 0;
+      width: 60px;
+      z-index: 5;
+      pointer-events: none;
     }
-    #mainNav.hide-nav {
-      top: -100px;
+    .fade-left {
+      left: 0;
+      background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+    }
+    .fade-right {
+      right: 0;
+      background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
     }
     #lightbox-modal {
       display: none;
@@ -98,6 +105,28 @@
       top: 50%;
       transform: translateY(-50%);
     }
+    .site-logo {
+      position: fixed;
+      top: 10px;
+      left: 20px;
+      z-index: 1000;
+    }
+    .site-logo img {
+      height: 180px;
+      width: auto;
+    }
+    #mainNav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--cloud-white);
+      transition: top 0.3s ease;
+      z-index: 999;
+    }
+    #mainNav.hide-nav {
+      top: -100px;
+    }
   </style>
 </head>
 <body class="page-overlay page-with-background">
@@ -128,44 +157,19 @@
         Explore examples of Mackenzie’s residential and commercial work — from elegant interiors to careful restoration of historic exteriors. Every image reflects a commitment to quality, detail, and trust.
       </p>
 
-      <h2>Commercial Projects</h2>
-      <div class="gallery-grid" id="gallery">
-        <figure>
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013667/essex-st.inn-bedroom_nzkjoh.jpg" alt="Essex Street Inn – Bedroom 1" />
-          <figcaption>Essex Street Inn – Bedroom 1</figcaption>
-        </figure>
-        <figure>
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013665/essex-st.-inn-bderoom-2_x5f9eo.jpg" alt="Essex Street Inn – Bedroom 2" />
-          <figcaption>Essex Street Inn – Bedroom 2</figcaption>
-        </figure>
-        <figure>
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013576/essex-st.-inn-1_bzpvfo.jpg" alt="Essex Street Inn – Exterior" />
-          <figcaption>Essex Street Inn – Exterior (Commercial)</figcaption>
-        </figure>
-      </div>
-
-      <h2>Residential Projects</h2>
-      <div class="gallery-grid">
-        <figure>
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom (Residential)" />
-          <figcaption>Interior Bedroom (Residential)</figcaption>
-        </figure>
-        <figure>
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom (Residential)" />
-          <figcaption>Bedroom (Residential)</figcaption>
-        </figure>
-        <figure>
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013175/closet-1_uli2kt.jpg" alt="Closet (Residential)" />
-          <figcaption>Closet (Residential)</figcaption>
-        </figure>
-        <figure>
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway (Residential)" />
-          <figcaption>Hallway (Residential)</figcaption>
-        </figure>
-        <figure>
-          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room (Residential)" />
-          <figcaption>Living Room (Residential)</figcaption>
-        </figure>
+      <div class="gallery-wrapper">
+        <div class="fade-left"></div>
+        <div class="fade-right"></div>
+        <div class="gallery-track">
+          <figure><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013667/essex-st.inn-bedroom_nzkjoh.jpg" alt="Essex Street Inn – Bedroom 1" /><figcaption>Essex Street Inn – Bedroom 1</figcaption></figure>
+          <figure><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013665/essex-st.-inn-bderoom-2_x5f9eo.jpg" alt="Essex Street Inn – Bedroom 2" /><figcaption>Essex Street Inn – Bedroom 2</figcaption></figure>
+          <figure><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013576/essex-st.-inn-1_bzpvfo.jpg" alt="Essex Street Inn – Exterior" /><figcaption>Essex Street Inn – Exterior</figcaption></figure>
+          <figure><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom" /><figcaption>Interior Bedroom</figcaption></figure>
+          <figure><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2" /><figcaption>Bedroom 2</figcaption></figure>
+          <figure><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013175/closet-1_uli2kt.jpg" alt="Closet" /><figcaption>Closet</figcaption></figure>
+          <figure><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway" /><figcaption>Hallway</figcaption></figure>
+          <figure><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room" /><figcaption>Living Room</figcaption></figure>
+        </div>
       </div>
 
       <div style="text-align:center; margin-top:2rem;">
@@ -188,7 +192,7 @@
 
   <script>
     let currentIndex = 0;
-    const images = [...document.querySelectorAll('.gallery-grid img')];
+    const images = [...document.querySelectorAll('.gallery-track img')];
     const modal = document.getElementById('lightbox-modal');
     const modalImg = modal.querySelector('img');
     const closeBtn = modal.querySelector('.close-btn');
@@ -235,7 +239,6 @@
   </script>
 
   <script>
-    // Scroll-hide/show nav
     let lastScrollY = window.scrollY;
     let nav = document.getElementById('mainNav');
 
