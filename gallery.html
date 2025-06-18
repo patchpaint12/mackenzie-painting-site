@@ -20,7 +20,7 @@
       gap: 1.5rem;
       overflow-x: auto;
       scroll-behavior: smooth;
-      animation: scroll-left 10s linear infinite;
+      /* animation removed for JS scroll */
     }
     .gallery-track:hover {
       animation-play-state: paused;
@@ -45,8 +45,7 @@
       color: var(--text-gray);
       text-align: center;
     }
-    @keyframes scroll-left {
-      0% { transform: translateX(0); }
+    /* keyframes removed */
       100% { transform: translateX(-50%); }
     }
     .fade-left, .fade-right {
@@ -237,6 +236,27 @@
         if (e.key === 'ArrowRight') showNext();
       }
     });
+  </script>
+
+  <script>
+    // Auto-scroll with pause on hover
+    const track = document.querySelector('.gallery-track');
+    let autoScrollInterval;
+
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        track.scrollLeft += 1.5; // Adjust speed here
+      }, 20); // Lower = faster scroll
+    }
+
+    function stopAutoScroll() {
+      clearInterval(autoScrollInterval);
+    }
+
+    track.addEventListener('mouseenter', stopAutoScroll);
+    track.addEventListener('mouseleave', startAutoScroll);
+
+    startAutoScroll();
   </script>
 
   <script>
