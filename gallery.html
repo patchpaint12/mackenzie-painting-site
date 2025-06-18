@@ -6,6 +6,10 @@
   <title>Project Gallery | Mackenzie Doherty</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+    body, html {
+      height: auto;
+      overflow-y: auto;
+    }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -31,40 +35,6 @@
       color: var(--text-gray);
       text-align: center;
     }
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      flex-direction: column;
-    }
-    .lightbox img {
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 8px;
-    }
-    .lightbox:target {
-      display: flex;
-    }
-    .lightbox-controls {
-      display: flex;
-      justify-content: space-between;
-      width: 80%;
-      align-items: center;
-      margin-top: 1rem;
-    }
-    .lightbox-controls a {
-      color: white;
-      font-size: 2rem;
-      text-decoration: none;
-      padding: 0 1rem;
-    }
     .site-logo {
       position: fixed;
       top: 10px;
@@ -86,6 +56,47 @@
     }
     #mainNav.hide-nav {
       top: -100px;
+    }
+    #lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 2000;
+    }
+    #lightbox-modal img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 8px;
+    }
+    #lightbox-modal .close-btn,
+    #lightbox-modal .prev-btn,
+    #lightbox-modal .next-btn {
+      position: absolute;
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    #lightbox-modal .close-btn {
+      top: 20px;
+      right: 30px;
+    }
+    #lightbox-modal .prev-btn {
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #lightbox-modal .next-btn {
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   </style>
 </head>
@@ -118,17 +129,17 @@
       </p>
 
       <h2>Commercial Projects</h2>
-      <div class="gallery-grid">
+      <div class="gallery-grid" id="gallery">
         <figure>
-          <a href="#c1"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013667/essex-st.inn-bedroom_nzkjoh.jpg" alt="Essex Street Inn Bedroom 1" /></a>
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013667/essex-st.inn-bedroom_nzkjoh.jpg" alt="Essex Street Inn – Bedroom 1" />
           <figcaption>Essex Street Inn – Bedroom 1</figcaption>
         </figure>
         <figure>
-          <a href="#c2"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013665/essex-st.-inn-bderoom-2_x5f9eo.jpg" alt="Essex Street Inn Bedroom 2" /></a>
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013665/essex-st.-inn-bderoom-2_x5f9eo.jpg" alt="Essex Street Inn – Bedroom 2" />
           <figcaption>Essex Street Inn – Bedroom 2</figcaption>
         </figure>
         <figure>
-          <a href="#c3"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013576/essex-st.-inn-1_bzpvfo.jpg" alt="Essex Street Inn Exterior" /></a>
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013576/essex-st.-inn-1_bzpvfo.jpg" alt="Essex Street Inn – Exterior" />
           <figcaption>Essex Street Inn – Exterior (Commercial)</figcaption>
         </figure>
       </div>
@@ -136,23 +147,23 @@
       <h2>Residential Projects</h2>
       <div class="gallery-grid">
         <figure>
-          <a href="#r1"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Brightly painted interior bedroom" /></a>
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom (Residential)" />
           <figcaption>Interior Bedroom (Residential)</figcaption>
         </figure>
         <figure>
-          <a href="#r2"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom with coastal tones" /></a>
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom (Residential)" />
           <figcaption>Bedroom (Residential)</figcaption>
         </figure>
         <figure>
-          <a href="#r3"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013175/closet-1_uli2kt.jpg" alt="Freshly painted closet" /></a>
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013175/closet-1_uli2kt.jpg" alt="Closet (Residential)" />
           <figcaption>Closet (Residential)</figcaption>
         </figure>
         <figure>
-          <a href="#r4"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013175/hallway-1_xxgls2.jpg" alt="Painted hallway" /></a>
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway (Residential)" />
           <figcaption>Hallway (Residential)</figcaption>
         </figure>
         <figure>
-          <a href="#r5"><img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013178/livingroom-1_g3mi37.jpg" alt="Bright living room with detailed trim" /></a>
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/f_auto,q_80,w_1000/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room (Residential)" />
           <figcaption>Living Room (Residential)</figcaption>
         </figure>
       </div>
@@ -162,78 +173,66 @@
         <a href="quote.html" class="cta-button" style="margin: 0 1rem; background-color:#2f3e55; color:white; padding:0.75rem 1.5rem; font-size:1rem; border-radius:6px; text-decoration:none;">Get a Quote</a>
       </div>
 
-      <!-- Lightboxes -->
-      <div id="c1" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013667/essex-st.inn-bedroom_nzkjoh.jpg" alt="Essex Street Inn Bedroom 1">
-        <div class="lightbox-controls">
-          <a href="#c3">‹</a>
-          <a href="#">✕</a>
-          <a href="#c2">›</a>
-        </div>
+      <div id="lightbox-modal">
+        <span class="close-btn">&times;</span>
+        <span class="prev-btn">&#10094;</span>
+        <img src="" alt="Lightbox Image" />
+        <span class="next-btn">&#10095;</span>
       </div>
-      <div id="c2" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013665/essex-st.-inn-bderoom-2_x5f9eo.jpg" alt="Essex Street Inn Bedroom 2">
-        <div class="lightbox-controls">
-          <a href="#c1">‹</a>
-          <a href="#">✕</a>
-          <a href="#c3">›</a>
-        </div>
-      </div>
-      <div id="c3" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013576/essex-st.-inn-1_bzpvfo.jpg" alt="Essex Street Inn Exterior">
-        <div class="lightbox-controls">
-          <a href="#c2">‹</a>
-          <a href="#">✕</a>
-          <a href="#c1">›</a>
-        </div>
-      </div>
-      <div id="r1" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012557/217-northern-bedroom-1_ojorml.jpg" alt="Interior Bedroom">
-        <div class="lightbox-controls">
-          <a href="#r5">‹</a>
-          <a href="#">✕</a>
-          <a href="#r2">›</a>
-        </div>
-      </div>
-      <div id="r2" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750012988/bedroom-2_kogmpt.jpg" alt="Bedroom 2">
-        <div class="lightbox-controls">
-          <a href="#r1">‹</a>
-          <a href="#">✕</a>
-          <a href="#r3">›</a>
-        </div>
-      </div>
-      <div id="r3" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/closet-1_uli2kt.jpg" alt="Closet">
-        <div class="lightbox-controls">
-          <a href="#r2">‹</a>
-          <a href="#">✕</a>
-          <a href="#r4">›</a>
-        </div>
-      </div>
-      <div id="r4" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013175/hallway-1_xxgls2.jpg" alt="Hallway">
-        <div class="lightbox-controls">
-          <a href="#r3">‹</a>
-          <a href="#">✕</a>
-          <a href="#r5">›</a>
-        </div>
-      </div>
-      <div id="r5" class="lightbox">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750013178/livingroom-1_g3mi37.jpg" alt="Living Room">
-        <div class="lightbox-controls">
-          <a href="#r4">‹</a>
-          <a href="#">✕</a>
-          <a href="#r1">›</a>
-        </div>
-      </div>
-
     </section>
   </main>
 
   <footer>
     <p>© 2025 Mackenzie Doherty Painting</p>
   </footer>
+
+  <script>
+    let currentIndex = 0;
+    const images = [...document.querySelectorAll('.gallery-grid img')];
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = modal.querySelector('img');
+    const closeBtn = modal.querySelector('.close-btn');
+    const prevBtn = modal.querySelector('.prev-btn');
+    const nextBtn = modal.querySelector('.next-btn');
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        currentIndex = index;
+        showModal();
+      });
+    });
+
+    function showModal() {
+      modalImg.src = images[currentIndex].src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showModal();
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showModal();
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+
+    document.addEventListener('keydown', (e) => {
+      if (modal.style.display === 'flex') {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+      }
+    });
+  </script>
 
   <script>
     // Scroll-hide/show nav
