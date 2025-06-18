@@ -28,6 +28,35 @@
     #mainNav.hide-nav {
       top: -100px;
     }
+
+    .services-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .services-text {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .services-images {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: flex-start;
+      min-width: 280px;
+    }
+
+    .services-images img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 <body class="page-overlay page-with-background">
@@ -53,43 +82,47 @@
 
   <main class="content-overlay">
     <section class="services">
-      
-      <!-- Injected Image Row -->
-      <div class="services-images" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 2.5rem;">
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750273509/PXL_20250618_145935636.PORTRAIT_f208p7.jpg" alt="Interior painting example" style="max-width: 400px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-        <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750276416/PXL_20250618_145919755.PORTRAIT_cq3ofj.jpg" alt="Cabinet painting detail" style="max-width: 400px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-      </div>
-      
-      <h1>Our Services</h1>
-      <p>With a decade of experience, Mackenzie offers a full range of residential and commercial painting services across southern NH and the North Shore of MA.</p>
+      <div class="services-layout">
+        <!-- Text Content -->
+        <div class="services-text">
+          <h1>Our Services</h1>
+          <p>With a decade of experience, Mackenzie offers a full range of residential and commercial painting services across southern NH and the North Shore of MA.</p>
 
-      <h2>Residential Painting</h2>
-      <ul>
-        <li>Interior walls, ceilings, and trim</li>
-        <li>Kitchen cabinet refinishing</li>
-        <li>Wallpaper removal & wall repair</li>
-        <li>Exterior painting & staining</li>
-      </ul>
+          <h2>Residential Painting</h2>
+          <ul>
+            <li>Interior walls, ceilings, and trim</li>
+            <li>Kitchen cabinet refinishing</li>
+            <li>Wallpaper removal & wall repair</li>
+            <li>Exterior painting & staining</li>
+          </ul>
 
-      <h2>Commercial Painting</h2>
-      <ul>
-        <li>Retail spaces and storefronts</li>
-        <li>Office interiors and common areas</li>
-        <li>Historic property restorations</li>
-        <li>Flexible off-hours scheduling</li>
-      </ul>
+          <h2>Commercial Painting</h2>
+          <ul>
+            <li>Retail spaces and storefronts</li>
+            <li>Office interiors and common areas</li>
+            <li>Historic property restorations</li>
+            <li>Flexible off-hours scheduling</li>
+          </ul>
 
-      <h2>Specialty Services</h2>
-      <ul>
-        <li>Color consultation & paint matching</li>
-        <li>Detailed trim & molding work</li>
-        <li>Surface prep and patching</li>
-        <li>Custom finishes and decorative accents</li>
-      </ul>
+          <h2>Specialty Services</h2>
+          <ul>
+            <li>Color consultation & paint matching</li>
+            <li>Detailed trim & molding work</li>
+            <li>Surface prep and patching</li>
+            <li>Custom finishes and decorative accents</li>
+          </ul>
 
-      <div style="text-align:center; margin-top:2rem;">
-        <a href="gallery.html" class="cta-button" style="margin: 0 1rem; background-color:#2f3e55; color:white; padding:0.75rem 1.5rem; font-size:1rem; border-radius:6px; text-decoration:none;">View Gallery</a>
-        <a href="contact.html" class="cta-button" style="margin: 0 1rem; background-color:#2f3e55; color:white; padding:0.75rem 1.5rem; font-size:1rem; border-radius:6px; text-decoration:none;">Contact</a>
+          <div style="text-align:center; margin-top:2rem;">
+            <a href="gallery.html" class="cta-button" style="margin: 0 1rem; background-color:#2f3e55; color:white; padding:0.75rem 1.5rem; font-size:1rem; border-radius:6px; text-decoration:none;">View Gallery</a>
+            <a href="contact.html" class="cta-button" style="margin: 0 1rem; background-color:#2f3e55; color:white; padding:0.75rem 1.5rem; font-size:1rem; border-radius:6px; text-decoration:none;">Contact</a>
+          </div>
+        </div>
+
+        <!-- Image Content -->
+        <div class="services-images">
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750273509/PXL_20250618_145935636.PORTRAIT_f208p7.jpg" alt="Interior painting example" />
+          <img src="https://res.cloudinary.com/dbkxem63v/image/upload/v1750276416/PXL_20250618_145919755.PORTRAIT_cq3ofj.jpg" alt="Cabinet painting detail" />
+        </div>
       </div>
     </section>
   </main>
@@ -120,3 +153,4 @@
   </script>
 </body>
 </html>
+``
