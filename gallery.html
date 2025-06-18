@@ -239,24 +239,23 @@
   </script>
 
   <script>
-    // Auto-scroll with pause on hover
+    // Auto-scroll with requestAnimationFrame (fixes off-screen render issue)
     const track = document.querySelector('.gallery-track');
-    let autoScrollInterval;
+    let scrollPos = 0;
+    let scrolling = true;
 
-    function startAutoScroll() {
-      autoScrollInterval = setInterval(() => {
-        track.scrollLeft += 1.5; // Adjust speed here
-      }, 20); // Lower = faster scroll
+    function scrollGallery() {
+      if (scrolling) {
+        scrollPos += 1.5; // adjust scroll speed here
+        track.scrollTo({ left: scrollPos, behavior: 'auto' });
+      }
+      requestAnimationFrame(scrollGallery);
     }
 
-    function stopAutoScroll() {
-      clearInterval(autoScrollInterval);
-    }
+    track.addEventListener('mouseenter', () => { scrolling = false; });
+    track.addEventListener('mouseleave', () => { scrolling = true; });
 
-    track.addEventListener('mouseenter', stopAutoScroll);
-    track.addEventListener('mouseleave', startAutoScroll);
-
-    startAutoScroll();
+    requestAnimationFrame(scrollGallery);
   </script>
 
   <script>
